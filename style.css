@@ -108,6 +108,7 @@ h2 {text-shadow: 2px 2px var(--cor-destaque);
 
 /* Header */
 header {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,7 +225,7 @@ nav {
 /* Mobile-first responsive design */
 
 /* Header and Navigation */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 200px) {
     header {
         padding: 1rem;
     }
@@ -244,7 +245,7 @@ nav {
 
     /* Banner */
     .banner {
-        min-height: 300px;
+        min-height: 100px;
     }
 
     .banner-content h2 {
@@ -277,7 +278,7 @@ nav {
 }
 
 /* Base styles for larger screens */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 375px) {
     nav {
         flex-direction: row;
         gap: 2rem;
@@ -307,6 +308,9 @@ img {
 
 /* Mobile menu styles */
 .mobile-menu-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -330,6 +334,10 @@ img {
 @media screen and (max-width: 768px) {
     .mobile-menu-button {
         display: flex;
+    }
+
+    header {
+        padding-top: 70px; /* Add space for the fixed button */
     }
 
     .main-nav {
@@ -360,5 +368,43 @@ img {
 
     .mobile-menu-button.active span:last-child {
         transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .banner {
+        height: 200px; /* Reduced from 300px */
+    }
+
+    .banner-content {
+        max-width: 300px; /* Reduced from 500px */
+        padding: 0 15px;
+    }
+
+    .banner-content h2 {
+        font-size: 1.8rem; /* Reduced from 3rem */
+        margin-bottom: 0.5rem;
+    }
+
+    .banner-content p {
+        font-size: 1rem; /* Reduced from 1.2rem */
+        margin-bottom: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem; /* Smaller padding */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .banner {
+        height: 150px; /* Even smaller for phones */
+    }
+
+    .banner-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .banner-content p {
+        font-size: 0.9rem;
     }
 }
