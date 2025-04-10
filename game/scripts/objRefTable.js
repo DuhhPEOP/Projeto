@@ -7,6 +7,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Keyboard,
 		C3.Plugins.Mouse,
 		C3.Plugins.Text,
+		C3.Plugins.Touch,
 		C3.Plugins.Mouse.Cnds.OnClick,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Behaviors.Platform.Acts.SetVectorY,
@@ -26,7 +27,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.System.Acts.AddVar,
-		C3.Plugins.Sprite.Cnds.CompareY
+		C3.Plugins.Sprite.Cnds.CompareY,
+		C3.Plugins.Touch.Cnds.OnTapGesture
 	];
 };
 self.C3_JsPropNameTable = [
@@ -37,7 +39,8 @@ self.C3_JsPropNameTable = [
 	{Keyboard: 0},
 	{Mouse: 0},
 	{CANO: 0},
-	{pontos: 0}
+	{pontos: 0},
+	{Touch: 0}
 ];
 
 self.InstanceType = {
@@ -47,5 +50,6 @@ self.InstanceType = {
 	Keyboard: class extends self.IInstance {},
 	Mouse: class extends self.IInstance {},
 	CANO: class extends self.ISpriteInstance {},
-	pontos: class extends self.ITextInstance {}
+	pontos: class extends self.ITextInstance {},
+	Touch: class extends self.IInstance {}
 }
